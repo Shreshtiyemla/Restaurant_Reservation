@@ -1,0 +1,11 @@
+package com.example.Restaurant.SpringSecurity.Repository;
+
+import com.example.Restaurant.SpringSecurity.Entity.Bill;
+import com.example.Restaurant.SpringSecurity.Entity.Reservation;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface BillRepository extends JpaRepository<Bill,Integer> {
+    Bill findFirstByReservation(Reservation reservation);
+}
