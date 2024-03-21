@@ -152,13 +152,7 @@ public class CustomerController {
         System.out.println(billModel.getReservation().getSlot().getSlotId());
         return "viewBill";
     }
-//    @RequestMapping("/viewCustomerBill")
-//    public String viewBill(Model model){
-//        List<BillModel> billModelList = billService.getBills(customerId);
-//        model.addAttribute("billModelList",billModelList);
-//        model.addAttribute("customerId",customerId);
-//        return "viewBill";
-//    }
+
     @RequestMapping("/processPaymentAndRewardPoints")
     public String processPaymentAndRewardPoints(@RequestParam("customerId") int customerId,
                                                 @RequestParam("tableId") int tableId,
