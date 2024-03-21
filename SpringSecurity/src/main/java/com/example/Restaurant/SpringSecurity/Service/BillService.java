@@ -32,35 +32,6 @@ public class BillService implements BillServiceImpl {
     @Autowired
     ModelToEntityConversion entityConverter;
 
-
-//        public List<BillModel> generateBillsForCustomer(int customerId, int resId) {
-//            Customer customer = customRepo.findById(customerId).orElse(null);
-//            if (customer != null) {
-//                Reservation reservations = reservationRepo.findById(resId).get();
-//                if (reservations != null){
-//                    generateBillForReservation(customer, reservations);
-//                    List<Bill> list = billRepo.findAll();
-//                    System.out.println(list.size());
-//                    List<BillModel> billModels = new ArrayList<>();
-//                    if (!list.isEmpty()) {
-//                        list.forEach(l -> {
-//                            System.out.println(l.getBillId() + " " + l.isBillStatus());
-//                            BillModel b = modelConverter.entityToModelBill(l);
-//                            billModels.add(b);
-//                            System.out.println(b.getBillId() + " " + b.isBillStatus());
-//                        });
-//                    } else {
-//                        System.out.println("No bills found");
-//                    }
-//
-//                    return billModels;
-//                }
-//            } else {
-//                return null;
-//            }
-//            return null;
-//        }
-
     private void generateBillForReservation(Customer customer, Reservation reservation) {
         AvailableTables table = reservation.getTableReserving();
         BigDecimal billAmount = calculateBillAmount(table.getPrice());
