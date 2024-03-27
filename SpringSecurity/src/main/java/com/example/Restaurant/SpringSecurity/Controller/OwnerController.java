@@ -130,11 +130,10 @@ public class OwnerController {
     }
     @RequestMapping("/addingTables")
     public String addingTables(@Valid AvailableTablesModel availableTablesModel, BindingResult result, Model model) {
-        // Validate the AvailableTablesModel
+    
         availableTablesValidator.validate(availableTablesModel, result);
         if (result.hasErrors()) {
-            // If there are validation errors, return to the form with error messages
-            return "addTables"; // Change "yourErrorPage" to the appropriate error page
+            return "addTables"; 
         }
         System.out.println(rId);
         AvailableTablesModel availableTablesModel1 = tablesService.addTable(rId, availableTablesModel);
